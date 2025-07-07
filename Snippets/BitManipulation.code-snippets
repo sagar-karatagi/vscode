@@ -1,0 +1,20 @@
+{
+  "Count Set Bits from 1 to n (ll version)": {
+    "prefix": "countSetBits",
+    "body": [
+      "// Counts total number of set bits in all numbers from 1 to n",
+      "// Time: O(log n), Safe for n up to 1e18",
+      "ll countSetBitsInRange(ll n) {",
+      "    ll count = 0;",
+      "    while (n > 0) {",
+      "        int x = 63 - __builtin_clzll(n);",
+      "        count += x * (1LL << (x - 1));",
+      "        n -= (1LL << x);",
+      "        count += n + 1;",
+      "    }",
+      "    return count;",
+      "}"
+    ],
+    "description": "Counts total number of set bits from 1 to n using long long"
+  }
+}
